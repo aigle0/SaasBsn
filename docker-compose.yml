@@ -1,0 +1,31 @@
+services:
+  postgres:
+    container_name: postgres-sql-bsn
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /var/lib/postgresql/new_data
+      POSTGRES_DB: saas_bsn_beta
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - 5432:5432
+    networks:
+      - spring-saas
+    restart: unless-stopped
+  mail-dev:
+    container_name: mail-dev-bsn
+    image: maildev/maildev
+    ports:
+      - 1080:1080
+      - 1025:1025
+
+
+networks:
+  spring-saas:
+    driver: bridge
+
+volumes:
+  postgres:
+    driver: local
