@@ -1,6 +1,8 @@
 package com.bsn.beta.user;
 
+import com.bsn.beta.history.TransactionHistory;
 import com.bsn.beta.role.Role;
+import com.bsn.beta.saas.Book;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -42,6 +44,12 @@ public class User implements UserDetails, Principal {//Principal cause used in A
 
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Book> books;
+
+    @OneToMany(mappedBy = "user")
+    private List<TransactionHistory> histories;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

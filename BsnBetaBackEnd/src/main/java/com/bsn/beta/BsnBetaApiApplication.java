@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
-@EnableJpaAuditing//cause added @EntityListeners(AuditingEntityListener.class) in User
+@EnableJpaAuditing//cause added @EntityListeners(AuditingEntityListener.class) in User,Book,Feedback...
 @EnableAsync // cause do not block the user until receiving the email com/bsn/beta/email/EmailService.java:28
 public class BsnBetaApiApplication {
 
