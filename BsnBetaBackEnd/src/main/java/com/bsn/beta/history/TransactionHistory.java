@@ -30,5 +30,5 @@ public class TransactionHistory extends BaseEntity {
 
 
     private boolean returned;
-    private boolean returnedApproved;
+    private boolean returnApproved;
 }

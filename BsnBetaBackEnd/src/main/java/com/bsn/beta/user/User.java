@@ -32,7 +32,7 @@ public class User implements UserDetails, Principal {//Principal cause used in A
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
