@@ -1,5 +1,6 @@
 package com.bsn.beta.saas;
 
+import com.bsn.beta.file.FileUtils;
 import com.bsn.beta.history.TransactionHistory;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,7 @@ public class BookMapper {
                 .archived(book.isArchived())
                 .shareable(book.isShareable())
                 .owner(book.getOwner().getFullName())
+                .cover(FileUtils.readFileFromLocation(book.getBookCover()))
                 .build();
     }
 
