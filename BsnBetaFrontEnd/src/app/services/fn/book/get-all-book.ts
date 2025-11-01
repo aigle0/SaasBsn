@@ -30,4 +30,4 @@ export function getAllBook(http: HttpClient, rootUrl: string, params?: GetAllBoo
   );
 }
 
-getAllBook.PATH = '/';
+getAllBook.PATH = '/books';

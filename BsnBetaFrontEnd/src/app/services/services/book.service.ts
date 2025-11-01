@@ -45,7 +45,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `uploadBookCoverPicture()` */
-  static readonly UploadBookCoverPicturePath = '/cover/{book-id}';
+  static readonly UploadBookCoverPicturePath = '/books/cover/{book-id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -74,7 +74,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `borrowBook()` */
-  static readonly BorrowBookPath = '/borrow/{book-id}';
+  static readonly BorrowBookPath = '/books/borrow/{book-id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -99,7 +99,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `getAllBook()` */
-  static readonly GetAllBookPath = '/';
+  static readonly GetAllBookPath = '/books';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -124,7 +124,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `saveBook()` */
-  static readonly SaveBookPath = '/';
+  static readonly SaveBookPath = '/books';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -149,7 +149,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `updateShareableStatus()` */
-  static readonly UpdateShareableStatusPath = '/shareable/{book-id}';
+  static readonly UpdateShareableStatusPath = '/books/shareable/{book-id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -174,7 +174,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `returnBorrowBook()` */
-  static readonly ReturnBorrowBookPath = '/borrow/return/{book-id}';
+  static readonly ReturnBorrowBookPath = '/books/borrow/return/{book-id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -224,7 +224,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `updateArchivedStatus()` */
-  static readonly UpdateArchivedStatusPath = '/archived/{book-id}';
+  static readonly UpdateArchivedStatusPath = '/books/archived/{book-id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -249,7 +249,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `getBookById()` */
-  static readonly GetBookByIdPath = '/{book-id}';
+  static readonly GetBookByIdPath = '/books/{book-id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -274,7 +274,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `getAllReturnedBook()` */
-  static readonly GetAllReturnedBookPath = '/returned';
+  static readonly GetAllReturnedBookPath = '/books/returned';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -299,7 +299,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `getAllBookByOwner()` */
-  static readonly GetAllBookByOwnerPath = '/owner';
+  static readonly GetAllBookByOwnerPath = '/books/owner';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -324,7 +324,7 @@ export class BookService extends BaseService {
   }
 
   /** Path part for operation `getAllBorrowedBook()` */
-  static readonly GetAllBorrowedBookPath = '/borrowed';
+  static readonly GetAllBorrowedBookPath = '/books/borrowed';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
