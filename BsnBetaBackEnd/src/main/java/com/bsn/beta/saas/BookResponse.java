@@ -1,7 +1,6 @@
 package com.bsn.beta.saas;
 
 import lombok.*;
-import org.springframework.stereotype.Service;
 
 @Getter
 @Setter

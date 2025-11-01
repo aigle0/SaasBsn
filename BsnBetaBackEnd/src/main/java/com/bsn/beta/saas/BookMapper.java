@@ -17,7 +17,7 @@ public class BookMapper {
                 .shareable(request.shareable())
                 .build();
     }
-    public BookResponse toBookReponse(Book book) {
+    public BookResponse toBookResponse(Book book) {
         return BookResponse.builder()
                 .id(book.getId())
                 .title(book.getTitle())
@@ -31,7 +31,7 @@ public class BookMapper {
                 .build();
     }
 
-    public BorrowedBookResponse toBorrowedBookReponse(TransactionHistory history) {
+    public BorrowedBookResponse toBorrowedBookResponse(TransactionHistory history) {
         return BorrowedBookResponse.builder()
                 .id(history.getBook().getId())
                 .title(history.getBook().getTitle())
@@ -42,7 +42,7 @@ public class BookMapper {
                 .build();
     }
 
-    public ReturnedBookResponse toReturnedBookReponse(TransactionHistory history) {
+    public ReturnedBookResponse toReturnedBookResponse(TransactionHistory history) {
         return ReturnedBookResponse.builder()
                 .id(history.getBook().getId())
                 .title(history.getBook().getTitle())

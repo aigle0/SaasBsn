@@ -2,7 +2,6 @@ package com.bsn.beta.feedback;
 
 import com.bsn.beta.common.BaseEntity;
 import com.bsn.beta.saas.Book;
-import com.bsn.beta.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

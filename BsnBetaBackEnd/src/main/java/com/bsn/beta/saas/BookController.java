@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping(name = "books")
+@RequestMapping("books")
 @RequiredArgsConstructor
 @Tag(name = "Book")
 public class BookController {
 
-    private BookService bookService;
+    private final BookService bookService;
 
     @PostMapping
     public ResponseEntity<Integer> saveBook(@Valid @RequestBody BookRequest request,
@@ -22,7 +22,7 @@ public class BookController {
         return ResponseEntity.ok(bookService.save(request,connectedUser));
     }
 
-    @GetMapping("{book-id}")
+    @GetMapping("/{book-id}")
     public ResponseEntity<BookResponse> getBookById(@PathVariable("book-id") Integer bookId) {
         return ResponseEntity.ok(bookService.getBookById(bookId));
     }

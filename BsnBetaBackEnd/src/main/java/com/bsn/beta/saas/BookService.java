@@ -40,7 +40,7 @@ public class BookService {
 
     public BookResponse getBookById(Integer bookId) {
         return bookRepository.findById(bookId)
-                .map(bookMapper::toBookReponse)
+                .map(bookMapper::toBookResponse)
                 .orElseThrow(()-> new EntityNotFoundException("No book found with the ID:: "+bookId));
     }
 
@@ -49,7 +49,7 @@ public class BookService {
         Pageable pageable = PageRequest.of(page, size, Sort.by("creationDate").descending());
         Page<Book> books = bookRepository.findAllDisplayableBooks(pageable, user.getId());
         List<BookResponse> bookResponse = books.stream()
-                .map(bookMapper::toBookReponse)
+                .map(bookMapper::toBookResponse)
                 .toList();
         return new PageResponse<>(
                 bookResponse,
@@ -67,7 +67,7 @@ public class BookService {
         Pageable pageable = PageRequest.of(page, size, Sort.by("creationDate").descending());
         Page<Book> books = bookRepository.findAll(withOwnerId(Math.toIntExact(user.getId())),pageable);
         List<BookResponse> bookResponse = books.stream()
-                .map(bookMapper::toBookReponse)
+                .map(bookMapper::toBookResponse)
                 .toList();
         return new PageResponse<>(
                 bookResponse,
@@ -85,7 +85,7 @@ public class BookService {
         Pageable pageable = PageRequest.of(page, size, Sort.by("creationDate").descending());
         Page<TransactionHistory> allBorrowedBooks = historyRepository.findAllBorrowedBooks(pageable, (user.getId()));
         List<BorrowedBookResponse> borrowedBookResponse = allBorrowedBooks.stream()
-                .map(bookMapper::toBorrowedBookReponse)
+                .map(bookMapper::toBorrowedBookResponse)
                 .toList();
         return new PageResponse<>(
                 borrowedBookResponse,
@@ -103,7 +103,7 @@ public class BookService {
         Pageable pageable = PageRequest.of(page, size, Sort.by("creationDate").descending());
         Page<TransactionHistory> allBorrowedBooks = historyRepository.findAllReturnedBooks(pageable, (user.getId()));
         List<ReturnedBookResponse> returnedBookResponse = allBorrowedBooks.stream()
-                .map(bookMapper::toReturnedBookReponse)
+                .map(bookMapper::toReturnedBookResponse)
                 .toList();
         return new PageResponse<>(
                 returnedBookResponse,
